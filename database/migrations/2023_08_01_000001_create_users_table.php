@@ -17,9 +17,18 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->date('dob');
+            $table->string('gender');
+            // $table->unsignedBigInteger('state_id');
+            // $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('isAdmin');
+            $table->decimal('wallet')->default(0);
+            // $table->unsignedBigInteger('interest_id');
+            // $table->foreign('interest_id')->references('id')->on('interests')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('usernameLinkedin');
+            $table->string('mobileNumb');
+            $table->string('profession');
             $table->timestamps();
         });
     }
